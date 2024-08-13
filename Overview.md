@@ -4,9 +4,12 @@ Do the following as the first steps because the "risky.json" produced here is ne
 ```
 cp my_graphfuzz/core/json.hpp <dir_storing_parser.cpp>
 make
-run
+make run
+cp risky.json <wherever_schema_infer_is_to_be_executed>
 ```
-Then just follow the same instructions as in the original GraphFuzz. Replace "gfuzz" with "mygfuzz" and "lgraphfuzz" with "lmygraphfuzz"
+Then just follow the same instructions as in the original GraphFuzz. 
+- replace path to target library source code in Doxyfile.template
+- copy core/json.hpp to directory storing fuzz_exec.cpp, the casting shim needs it
 
 
 <u>Makefile for the static parser</u>
