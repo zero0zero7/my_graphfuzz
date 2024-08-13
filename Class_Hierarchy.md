@@ -1,4 +1,4 @@
-## General Idea:
+## General Idea
 1. XML -> Schema
     - For each struct, note the base and derived classes
     - For each struct, include the inherited methods
