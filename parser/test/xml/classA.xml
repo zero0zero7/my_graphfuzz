@@ -1,0 +1,199 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classA" kind="class" language="C++" prot="public">
+    <compoundname>A</compoundname>
+    <derivedcompoundref refid="classB" prot="public" virt="non-virtual">B</derivedcompoundref>
+    <includes refid="lib_8hpp" local="no">lib.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classA_1a3c7dc72b465bfd826f641d7ef3ee9f3d" prot="private" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* A::buffer</definition>
+        <argsstring></argsstring>
+        <name>buffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.hpp" line="21" column="10" bodyfile="lib.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classA_1ae57d22a385719ab872d47975581c7697" prot="private" static="no" mutable="no">
+        <type>double *</type>
+        <definition>double* A::doub_ptr</definition>
+        <argsstring></argsstring>
+        <name>doub_ptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.hpp" line="22" column="12" bodyfile="lib.hpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classA_1a4142862ec27f2f3d8deb026d51a5c5a0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>A::A</definition>
+        <argsstring>()</argsstring>
+        <name>A</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.hpp" line="9" column="5" bodyfile="lib.hpp" bodystart="9" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classA_1ad740c9d92fbd932778a52a65f660d9ae" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void A::mset</definition>
+        <argsstring>(char chr, int n)</argsstring>
+        <name>mset</name>
+        <param>
+          <type>char</type>
+          <declname>chr</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.hpp" line="10" column="10" bodyfile="lib.hpp" bodystart="10" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classA_1a35e59752ead1126350f164c86f3a25ce" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void A::fr</definition>
+        <argsstring>()</argsstring>
+        <name>fr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.hpp" line="11" column="10" bodyfile="lib.hpp" bodystart="11" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classA_1acc81b67fe2869e196e3fc15351c35428" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void A::mall_free</definition>
+        <argsstring>(int n)</argsstring>
+        <name>mall_free</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.hpp" line="12" column="10" bodyfile="lib.hpp" bodystart="12" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classA_1a2ae8ca8aaaf0e9cb76d2c522c6c8bfa5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>char *</type>
+        <definition>virtual char* A::get_buffer</definition>
+        <argsstring>()</argsstring>
+        <name>get_buffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.hpp" line="16" column="18" bodyfile="lib.hpp" bodystart="16" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classA_1ad1319b8e8d7902a1686e519f65d9de21" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void A::set_buffer</definition>
+        <argsstring>(int idx, char chr)</argsstring>
+        <name>set_buffer</name>
+        <param>
+          <type>int</type>
+          <declname>idx</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>chr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.hpp" line="17" column="10" bodyfile="lib.hpp" bodystart="17" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classA_1a95ca2450d3c41c6fe2838d601ecbf81c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual A::~A</definition>
+        <argsstring>()</argsstring>
+        <name>~A</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.hpp" line="19" column="13" bodyfile="lib.hpp" bodystart="19" bodyend="19"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classA_1acf0dc32b7f86a2f74c60496ab557b38c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>char</type>
+        <definition>static char A::ret_a</definition>
+        <argsstring>()</argsstring>
+        <name>ret_a</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.hpp" line="18" column="17" bodyfile="lib.hpp" bodystart="18" bodyend="18"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>A</label>
+        <link refid="classA"/>
+      </node>
+      <node id="2">
+        <label>B</label>
+        <link refid="classB"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>C</label>
+        <link refid="classC"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="lib.hpp" line="7" column="1" bodyfile="lib.hpp" bodystart="7" bodyend="23"/>
+    <listofallmembers>
+      <member refid="classA_1a4142862ec27f2f3d8deb026d51a5c5a0" prot="public" virt="non-virtual"><scope>A</scope><name>A</name></member>
+      <member refid="classA_1a3c7dc72b465bfd826f641d7ef3ee9f3d" prot="private" virt="non-virtual"><scope>A</scope><name>buffer</name></member>
+      <member refid="classA_1ae57d22a385719ab872d47975581c7697" prot="private" virt="non-virtual"><scope>A</scope><name>doub_ptr</name></member>
+      <member refid="classA_1a35e59752ead1126350f164c86f3a25ce" prot="public" virt="non-virtual"><scope>A</scope><name>fr</name></member>
+      <member refid="classA_1a2ae8ca8aaaf0e9cb76d2c522c6c8bfa5" prot="public" virt="virtual"><scope>A</scope><name>get_buffer</name></member>
+      <member refid="classA_1acc81b67fe2869e196e3fc15351c35428" prot="public" virt="non-virtual"><scope>A</scope><name>mall_free</name></member>
+      <member refid="classA_1ad740c9d92fbd932778a52a65f660d9ae" prot="public" virt="non-virtual"><scope>A</scope><name>mset</name></member>
+      <member refid="classA_1acf0dc32b7f86a2f74c60496ab557b38c" prot="public" virt="non-virtual"><scope>A</scope><name>ret_a</name></member>
+      <member refid="classA_1ad1319b8e8d7902a1686e519f65d9de21" prot="public" virt="non-virtual"><scope>A</scope><name>set_buffer</name></member>
+      <member refid="classA_1a95ca2450d3c41c6fe2838d601ecbf81c" prot="public" virt="virtual"><scope>A</scope><name>~A</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

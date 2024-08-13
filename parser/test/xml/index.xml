@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.1" xml:lang="en-US">
+  <compound refid="classA" kind="class"><name>A</name>
+    <member refid="classA_1a3c7dc72b465bfd826f641d7ef3ee9f3d" kind="variable"><name>buffer</name></member>
+    <member refid="classA_1ae57d22a385719ab872d47975581c7697" kind="variable"><name>doub_ptr</name></member>
+    <member refid="classA_1a4142862ec27f2f3d8deb026d51a5c5a0" kind="function"><name>A</name></member>
+    <member refid="classA_1ad740c9d92fbd932778a52a65f660d9ae" kind="function"><name>mset</name></member>
+    <member refid="classA_1a35e59752ead1126350f164c86f3a25ce" kind="function"><name>fr</name></member>
+    <member refid="classA_1acc81b67fe2869e196e3fc15351c35428" kind="function"><name>mall_free</name></member>
+    <member refid="classA_1a2ae8ca8aaaf0e9cb76d2c522c6c8bfa5" kind="function"><name>get_buffer</name></member>
+    <member refid="classA_1ad1319b8e8d7902a1686e519f65d9de21" kind="function"><name>set_buffer</name></member>
+    <member refid="classA_1a95ca2450d3c41c6fe2838d601ecbf81c" kind="function"><name>~A</name></member>
+    <member refid="classA_1acf0dc32b7f86a2f74c60496ab557b38c" kind="function"><name>ret_a</name></member>
+  </compound>
+  <compound refid="classB" kind="class"><name>B</name>
+    <member refid="classB_1ab4854dfb0e6be0266053913bc604cc63" kind="variable"><name>b</name></member>
+    <member refid="classB_1a9532a74021f7efb003dffbc9d4145e65" kind="function"><name>B</name></member>
+  </compound>
+  <compound refid="classC" kind="class"><name>C</name>
+    <member refid="classC_1a5ca7813ce1e9574786fdf320b9ca3c9c" kind="variable"><name>c</name></member>
+    <member refid="classC_1a05e6ea25c8ae42d5080bcbd96288240c" kind="function"><name>C</name></member>
+    <member refid="classC_1a15d9fc796811dd5a8c17b84e23e39d08" kind="function"><name>get_c</name></member>
+  </compound>
+  <compound refid="lib_8hpp" kind="file"><name>lib.hpp</name>
+  </compound>
+</doxygenindex>

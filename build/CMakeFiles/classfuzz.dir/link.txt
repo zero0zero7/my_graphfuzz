@@ -1,0 +1,2 @@
+/usr/bin/ar qc libclassfuzz.a CMakeFiles/classfuzz.dir/core/harness.cpp.o CMakeFiles/classfuzz.dir/graph.pb.cc.o
+/usr/bin/ranlib libclassfuzz.a

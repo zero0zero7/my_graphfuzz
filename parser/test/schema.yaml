@@ -1,0 +1,75 @@
+struct_A:
+  alloc_with_new: true
+  base: []
+  default_destructor: true
+  derived:
+  - B
+  headers:
+  - lib.hpp
+  methods:
+  - - A()
+    - memset: 0
+  - &id001
+    - void fr()
+    - memset: 0
+  - &id002
+    - char * get_buffer()
+    - memset: 0
+  - &id003
+    - void mall_free(int n)
+    - memset: 0
+  - &id004
+    - void mset(char chr, int n)
+    - memset: 1
+  - &id005
+    - void set_buffer(int idx, char chr)
+    - memset: 0
+  name: A
+  static_methods:
+  - &id006
+    - char A::ret_a()
+    - memset: 0
+  type: struct
+struct_B:
+  alloc_with_new: true
+  base:
+  - A
+  default_destructor: true
+  derived:
+  - C
+  headers:
+  - lib.hpp
+  methods:
+  - - B()
+    - memset: 0
+  - *id001
+  - *id002
+  - *id003
+  - *id004
+  - *id005
+  name: B
+  static_methods:
+  - *id006
+  type: struct
+struct_C:
+  alloc_with_new: true
+  base:
+  - B
+  default_destructor: true
+  derived: []
+  headers:
+  - lib.hpp
+  methods:
+  - - C()
+    - memset: 0
+  - *id001
+  - *id002
+  - - float get_c()
+    - memset: 0
+  - *id003
+  - *id004
+  - *id005
+  name: C
+  static_methods:
+  - *id006
+  type: struct
