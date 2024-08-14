@@ -1,3 +1,8 @@
+## Installation
+1. remove /build directory
+2. un-comment lines 10,11 in build.sh
+3. run build.sh
+
 ## Usage
 
 Do the following as the first steps because the "risky.json" produced here is needed to generate the "schema.yaml"

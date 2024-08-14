@@ -27,8 +27,7 @@ extern "C" void shim_init();
 extern "C" void shim_finalize();
 
 
-// MY CODE FOR SHIM_CAST
-// without extern "C"
+// CASTING
 json shm;
 typedef void (*cast_func)(void**, void**);
 void build_cast_map(std::unordered_map<unsigned int, std::unordered_map<unsigned int, cast_func>>* cast_map);
@@ -60,7 +59,6 @@ bool graphfuzz_ignore_invalid = false;
 int graphfuzz_max_nodes = 200; // Max nodes per graph.
 const char *graphfuzz_schema_path = "schema.json";
 
-// MY CODE TO PRINT CONSTRUCTORS & DESTRUCTORS & CONSUMERS & PRODUCERS
 bool graphfuzz_nocondes = false;
 const char *graphfuzz_condes_path = "condes.txt";
 
@@ -196,7 +194,7 @@ extern "C" int LLVMFuzzerInitialize(int *argc, char ***argv) {
             cerr << "[*] GraphFuzz: tracing mutations..." << endl;
         }
 
-        // MY CODE TO PRINT CONSTRUCTORS & DESTRUCTORS
+        // OPTION TO PRINT CONSTRUCTORS & DESTRUCTORS & CONSUMERS & PRODUCERS
         if (strcmp(opt, "--classfuzz_nocondes") == 0) graphfuzz_nocondes = true;
     }
 
@@ -215,12 +213,12 @@ extern "C" int LLVMFuzzerInitialize(int *argc, char ***argv) {
     }
 
 
-    // MY CODE TO MAP SHIM_INDEX: CLASS_NAME
+    // CODE TO MAP SHIM_INDEX: CLASS_NAME
     std::ifstream shm_in(string("shim.json"));
     shm_in >> shm;
     build_cast_map(&cast_map);
 
-    // MY CODE TO PRINT CONSTRUCTORS & DESTRUCTORS
+    // CODE TO PRINT CONSTRUCTORS & DESTRUCTORS & CONSUMERS & PRODUCERS
     std::cout << graphfuzz_nocondes <<std::endl;
     if (graphfuzz_nocondes == false) {
         global_schema->con_des(graphfuzz_condes_path);
@@ -493,10 +491,7 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
                 if (s != t) {
                     cout << "require cast from derived " << s << " to base " << t << endl;
                     void (*casting)(void**, void**) = cast_map[t][s];
-                    // printf("%p ", casting);
-                    // casting(in_ref, in_ref);
                     (*cast_map[t][s])(in_ref, in_ref);
-                    cout << "Done casting" << endl;
                 }
             }
         }

@@ -44,7 +44,6 @@ public:
             for (int i = 0; i< parent_list.size(); i++ ){
                 const CXXMethodDecl* parent_method_decl =  parent_list[i].get<CXXMethodDecl>();
                 if (parent_method_decl != NULL) {
-                    // cout << parent_method_decl->getQualifiedNameAsString() << " IS method \n";
                     funcs->push_back(parent_method_decl->getQualifiedNameAsString());
                 }
                 else {
@@ -66,9 +65,8 @@ public:
         FunctionDecl* func_decl = callExpr->getDirectCallee();
         if (func_decl != NULL) {
             string func_name = func_decl->getNameAsString();
-            // TODO: can abstract the func_name of interest
+            // TODO: abstract the func_name of interest
             if (func_name == "memset") { 
-                // cout << func_name << " function call expr \n";
                 this->recursive_parent<Stmt>(callExpr);
                 dangerous[func_name] = *funcs;
                 funcs->clear();
@@ -140,9 +138,6 @@ int main(int argc, const char **argv) {
     clang::tooling::ClangTool Tool(OptionsParser.getCompilations(),
                     OptionsParser.getSourcePathList());
     Tool.run(clang::tooling::newFrontendActionFactory<FindNamedClassAction>().get());
-    for (auto x: dangerous["memset"]) {
-        cout << x << " FDFDF\n";
-    }
 
     json j;
     for (auto op_func: dangerous) {

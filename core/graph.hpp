@@ -408,11 +408,9 @@ private:
             pool.push_back(j);
             for (auto op_weight : (schema->GetScope(g.nodes(j).type())).weights) {
                 // push j into pool for <weight> times
-                // std::cout << "BEFORE INSERT  ";
                 pool.insert(pool.end(), op_weight.second, j);
             }
         }
-        // std::cout << "AFTER LOOP  ";
         size_t pool_idx = rand() % pool.size();
         int node_idx = pool[pool_idx];
         return node_idx;
@@ -422,7 +420,6 @@ private:
      * Mutate the graph by invoking LLVMFuzzerMutate on a node's context.
      */
     bool MutateContext() {
-        std::cout << "CONTEXT" << std::endl;
         std::vector<int> with_context;
         for (unsigned int i = 0; i < (unsigned int)g.nodes_size(); ++i) {
             if (g.nodes(i).context().size() > 0) {
@@ -439,7 +436,6 @@ private:
         size_t sz = (size_t)(with_context.size());
         int node_idx = pick_scope(funcs, sz);
 
-        // int node_idx = with_context[rand() % with_context.size()];
         std::string *s = g.mutable_nodes(node_idx)->mutable_context();
 
         if (s == nullptr) {
@@ -455,7 +451,6 @@ private:
      * Mutate by replacing a destructor scope with a random consumer scope.
      */
     void MutateExtendDestructor() {
-        std::cout << "EXT DEST" << std::endl;
         std::vector<unsigned int> destructors;
         for (unsigned int i = 0; i < (unsigned int)g.nodes_size(); ++i) {
             if (schema->IsDestructor(g.nodes(i).type())) {
@@ -469,14 +464,9 @@ private:
         int funcs[destructors.size()];
         for (size_t i=0; i < destructors.size(); ++i) {
             funcs[i] = destructors[i];
-            // std::cout << " in loop mutate extend dest ";
         }
         size_t sz = (size_t)(destructors.size());
-        // std::cout << sz << "   B4 PICK size ";
         int target_idx = pick_scope(funcs, sz);
-        // std::cout << "AFTER PICK  ";
-        // int target_idx = pick_scope(destructors);
-        // auto target_idx = destructors[rand() % destructors.size()];
 
         // Unlink the destructor.
         NodeRef r = g.nodes(target_idx).in_ref(0);
@@ -507,7 +497,6 @@ private:
      * Mutate by replacing a constructor scope with a random producer scope.
      */
     void MutateExtendConstructor() {
-        std::cout << "EXT CONST" << std::endl;
         std::vector<unsigned int> constructors;
         for (unsigned int i = 0; i < (unsigned int)g.nodes_size(); ++i) {
             if (schema->IsConstructor(g.nodes(i).type())) {
@@ -524,7 +513,6 @@ private:
         }
         size_t sz = (size_t)(constructors.size());
         int target_idx = pick_scope(funcs, sz);
-        // auto target_idx = constructors[rand() % constructors.size()];
 
         // Unlink the constructor.
         NodeRef r = g.nodes(target_idx).out_ref(0);
@@ -559,7 +547,6 @@ private:
      * This mechanism is used when crosslinking two different graphs.
      */
     void MutateCrosslink(unsigned int split=0) {
-        std::cout << "CROSS LINK" << std::endl;
         assert(split <= g.nodes_size());
 
         // Early check.
@@ -578,9 +565,6 @@ private:
                     producers.insert(producers.end(), op_weight.second, std::make_tuple(i, j, scope.out_ref[j]));
                 }
             }
-            // for (unsigned int j = 0; j < scope.out_ref.size(); ++j) {
-            //     producers.push_back(std::make_tuple(i, j, scope.out_ref[j]));
-            // }
         }
 
         if (producers.size() == 0) return;
@@ -637,7 +621,6 @@ private:
      * Mutate by replacing a consumer scope with a destructor.
      */
     void MutateTruncateDestructor() {
-        std::cout << "TRUNC DEST" << std::endl;
         // Generate a list of producers.
         // (node_idx, conn_idx)
         std::vector<std::tuple<unsigned int, unsigned int, unsigned int>> producers;
@@ -648,9 +631,6 @@ private:
                     producers.insert(producers.end(), op_weight.second, std::make_tuple(i, j, scope.out_ref[j]));
                 }
             }
-            // for (unsigned int j = 0; j < scope.out_ref.size(); ++j) {
-            //     producers.push_back(std::make_tuple(i, j, scope.out_ref[j]));
-            // }
         }
 
         if (producers.size() == 0) return;
@@ -676,20 +656,16 @@ private:
      * Mutate by replacing a producer scope with a constructor.
      */
     void MutateTruncateConstructor() {
-        std::cout << "TRUNC CONSTR" << std::endl;
         // Generate a list of consumers.
         // (node_idx, conn_idx)
         std::vector<std::tuple<unsigned int, unsigned int, unsigned int>> consumers;
         for (unsigned int i = 0; i < (unsigned int)g.nodes_size(); ++i) {
             ScopeDef scope = schema->GetScope(g.nodes(i).type());
             for (auto op_weight : scope.weights) {
-                for (unsigned int j = 0; j < scope.out_ref.size(); ++j) {
-                    consumers.insert(consumers.end(), op_weight.second, std::make_tuple(i, j, scope.out_ref[j]));
+                for (unsigned int j = 0; j < scope.in_ref.size(); ++j) {
+                    consumers.insert(consumers.end(), op_weight.second, std::make_tuple(i, j, scope.in_ref[j]));
                 }
             }
-            // for (unsigned int j = 0; j < scope.in_ref.size(); ++j) {
-            //     consumers.push_back(std::make_tuple(i, j, scope.in_ref[j]));
-            // }
         }
 
         if (consumers.size() == 0) return;
@@ -715,15 +691,12 @@ private:
      * Replace an endpoint with one that has the same signature.
      */
     void MutateSwapEquivalent() {
-        std::cout << "SWAP" << std::endl;
         int funcs[g.nodes_size()];
         for (int i=0; i < g.nodes_size(); ++i) {
             funcs[i] = i;
         }
         size_t sz = (size_t)(g.nodes_size());
-        // std::cout << "BEFORE PICK  ";
         int idx_a = pick_scope(funcs, sz);
-        // unsigned int idx_a = rand() % g.nodes_size();
 
         ScopeDef def = schema->GetScope(g.nodes(idx_a).type());
         ScopeDef other = schema->WithMatchingSignature(def);
@@ -740,7 +713,6 @@ private:
      * Swap the index of two nodes on the same layer.
      */
     void MutateLayerIndex() {
-        std::cout << "LAYER" << std::endl;
         // Get a random node.
         int funcs[g.nodes_size()];
         for (int i=0; i < g.nodes_size(); ++i) {
@@ -748,8 +720,6 @@ private:
         }
         size_t sz = (size_t)(g.nodes_size());
         int idx_a = pick_scope(funcs, sz);
-        // std::cout << idx_a << " after pick a  " << sz;
-        // unsigned int idx_a = rand() % g.nodes_size();
         int layer_a = g.nodes(idx_a).layer();
 
         // Find other nodes with the same layer.
@@ -761,18 +731,12 @@ private:
 
         if (other.size() == 0) return;
 
-        // int* funcs_;
-        // std::cout << "BEFORE COPY  ";
         int funcs_[other.size()];
         for (size_t i=0; i < other.size(); ++i) {
             funcs_[i] = other[i];
         }
-        // std::cout << "BEFORE SZ  ";
         size_t sz_ = (size_t)(other.size());
-        // std::cout << "BEFORE PICK  ";
         int idx_b = pick_scope(funcs_, sz_);
-        // std::cout << "PICKED  ";
-        // unsigned int idx_b = other[rand() % other.size()];
 
         // Swap indexes
         ReindexNode(g.mutable_nodes(idx_a), idx_b);
@@ -785,7 +749,6 @@ private:
      * (i.e. this usually adds a method call)
      */
     void MutateSpliceIn() {
-        std::cout << "SPLICE IN" << std::endl;
         // Generate a list of producers.
         // (node_idx, conn_idx)
         std::vector<std::tuple<unsigned int, unsigned int, unsigned int>> producers;
@@ -796,9 +759,6 @@ private:
                     producers.insert(producers.end(), op_weight.second, std::make_tuple(i, j, scope.out_ref[j]));
                 }
             }
-            // for (unsigned int j = 0; j < scope.out_ref.size(); ++j) {
-            //     producers.push_back(std::make_tuple(i, j, scope.out_ref[j]));
-            // }
         }
 
         if (producers.size() == 0) return;
@@ -837,7 +797,6 @@ private:
      * Given A->A->A, remove the middle scope.
      */
     void MutateSpliceOut() {
-        std::cout << "OUTT" << std::endl;
         std::vector<unsigned int> removable;
         for (int i = 0; i < g.nodes_size(); ++i) {
             if (schema->IsSpliceable(g.nodes(i).type())) {
@@ -847,14 +806,12 @@ private:
 
         if (removable.size() == 0) return;
 
-        // int* funcs;
         int funcs[removable.size()];
         for (size_t i=0; i < removable.size(); ++i) {
             funcs[i] = removable[i];
         }
         size_t sz = (size_t)(removable.size());
         int node_idx = pick_scope(funcs, sz);
-        // unsigned int node_idx = removable[rand() % removable.size()];
 
         unsigned int type;
         unsigned int in_idx;
