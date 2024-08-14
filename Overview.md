@@ -11,6 +11,9 @@ Then just follow the same instructions as in the original GraphFuzz.
 - replace path to target library source code in Doxyfile.template
 - copy core/json.hpp to directory storing fuzz_exec.cpp, the casting shim needs it
 
+For the test example, manually add `#include "lib.hpp"` to "fuzz_exec.cpp".\
+<i> Ref "gen_cpp.py":make_exec_harness(), the auto-generated headers only include those that end with ".h", but in the example, the target lib src code ends with ".hpp" </i>
+
 
 <u>Makefile for the static parser</u>
 ```
