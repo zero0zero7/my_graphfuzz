@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classD" kind="class" language="C++" prot="public">
+    <compoundname>D</compoundname>
+    <basecompoundref refid="classB" prot="public" virt="non-virtual">B</basecompoundref>
+    <includes refid="lib_8h" local="no">lib.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classD_1a0ad8efa99ed39d0a2aa93c3fed6398c1" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int D::money</definition>
+        <argsstring></argsstring>
+        <name>money</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.h" line="56" column="9" bodyfile="lib.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classD_1aaa9c0c32402aef951a8c23b6ac6e8913" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>D::D</definition>
+        <argsstring>()</argsstring>
+        <name>D</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.h" line="51" column="5" bodyfile="lib.h" bodystart="51" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classD_1a1c07937b9cfa41b8edeafb5f1e93d3bc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>char</type>
+        <definition>char D::ret_b</definition>
+        <argsstring>()</argsstring>
+        <name>ret_b</name>
+        <reimplements refid="classA_1ae1d41a1e7eb197f8dd32dee3960bec02">ret_b</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.h" line="53" column="10" bodyfile="lib.h" bodystart="53" bodyend="53"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classD_1abbe2bf032aa8a90a0d12cde69336dc6d" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>char</type>
+        <definition>static char D::non_virt</definition>
+        <argsstring>()</argsstring>
+        <name>non_virt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.h" line="54" column="17" bodyfile="lib.h" bodystart="54" bodyend="54"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>A</label>
+        <link refid="classA"/>
+      </node>
+      <node id="2">
+        <label>B</label>
+        <link refid="classB"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D</label>
+        <link refid="classD"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>A</label>
+        <link refid="classA"/>
+      </node>
+      <node id="2">
+        <label>B</label>
+        <link refid="classB"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D</label>
+        <link refid="classD"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="lib.h" line="49" column="1" bodyfile="lib.h" bodystart="49" bodyend="57"/>
+    <listofallmembers>
+      <member refid="classA_1a4142862ec27f2f3d8deb026d51a5c5a0" prot="public" virt="non-virtual"><scope>D</scope><name>A</name></member>
+      <member refid="classB_1a9532a74021f7efb003dffbc9d4145e65" prot="public" virt="non-virtual"><scope>D</scope><name>B</name></member>
+      <member refid="classB_1aacd886fc6c23f3aec59720857e15021b" prot="public" virt="virtual"><scope>D</scope><name>b_func</name></member>
+      <member refid="classD_1aaa9c0c32402aef951a8c23b6ac6e8913" prot="public" virt="non-virtual"><scope>D</scope><name>D</name></member>
+      <member refid="classA_1ac829d84c1ffb9a5374b8b7937758f316" prot="public" virt="non-virtual"><scope>D</scope><name>get_money</name></member>
+      <member refid="classD_1a0ad8efa99ed39d0a2aa93c3fed6398c1" prot="private" virt="non-virtual"><scope>D</scope><name>money</name></member>
+      <member refid="classD_1abbe2bf032aa8a90a0d12cde69336dc6d" prot="public" virt="non-virtual"><scope>D</scope><name>non_virt</name></member>
+      <member refid="classB_1a651ac3292e87b1ae55b23b9ead46106d" prot="public" virt="virtual"><scope>D</scope><name>ret_a</name></member>
+      <member refid="classD_1a1c07937b9cfa41b8edeafb5f1e93d3bc" prot="public" virt="virtual"><scope>D</scope><name>ret_b</name></member>
+      <member refid="classA_1a68400c606c0e5fa7324bb5d5f7b2a718" prot="public" virt="non-virtual"><scope>D</scope><name>set_money</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

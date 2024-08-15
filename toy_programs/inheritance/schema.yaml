@@ -1,0 +1,147 @@
+struct_A:
+  alloc_with_new: true
+  base: []
+  default_destructor: true
+  derived:
+  - B
+  - C
+  - W
+  - X
+  headers:
+  - lib.h
+  methods:
+  - - A()
+    - {}
+  - &id001
+    - int get_money()
+    - {}
+  - &id002
+    - char ret_b()
+    - {}
+  - &id003
+    - void set_money(int x)
+    - {}
+  name: A
+  static_methods:
+  - &id004
+    - char A::ret_a()
+    - {}
+  type: struct
+struct_B:
+  alloc_with_new: true
+  base:
+  - A
+  default_destructor: true
+  derived:
+  - D
+  headers:
+  - lib.h
+  methods:
+  - - B()
+    - {}
+  - &id005
+    - void b_func()
+    - {}
+  - *id001
+  - *id002
+  - *id003
+  name: B
+  static_methods:
+  - *id004
+  type: struct
+struct_C:
+  alloc_with_new: true
+  base:
+  - A
+  default_destructor: true
+  derived: []
+  headers:
+  - lib.h
+  methods:
+  - - C()
+    - {}
+  - *id001
+  - - int ret_a()
+    - {}
+  - *id002
+  - *id003
+  name: C
+  static_methods: []
+  type: struct
+struct_D:
+  alloc_with_new: true
+  base:
+  - B
+  default_destructor: true
+  derived: []
+  headers:
+  - lib.h
+  methods:
+  - *id005
+  - - D()
+    - {}
+  - *id001
+  - - int ret_a()
+    - {}
+  - *id002
+  - *id003
+  name: D
+  static_methods: []
+  type: struct
+struct_W:
+  alloc_with_new: true
+  base:
+  - A
+  default_destructor: true
+  derived:
+  - Y
+  headers:
+  - lib.h
+  methods:
+  - *id001
+  - *id002
+  - *id003
+  - - W()
+    - {}
+  name: W
+  static_methods:
+  - *id004
+  type: struct
+struct_X:
+  alloc_with_new: true
+  base:
+  - A
+  default_destructor: true
+  derived:
+  - Y
+  headers:
+  - lib.h
+  methods:
+  - *id001
+  - *id002
+  - *id003
+  - - X()
+    - {}
+  name: X
+  static_methods:
+  - *id004
+  type: struct
+struct_Y:
+  alloc_with_new: true
+  base:
+  - W
+  - X
+  default_destructor: true
+  derived: []
+  headers:
+  - lib.h
+  methods:
+  - *id001
+  - *id002
+  - *id003
+  - - Y()
+    - {}
+  name: Y
+  static_methods:
+  - *id004
+  type: struct

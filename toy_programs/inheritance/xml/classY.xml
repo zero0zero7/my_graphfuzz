@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classY" kind="class" language="C++" prot="public">
+    <compoundname>Y</compoundname>
+    <basecompoundref refid="classW" prot="public" virt="non-virtual">W</basecompoundref>
+    <basecompoundref refid="classX" prot="public" virt="non-virtual">X</basecompoundref>
+    <includes refid="lib_8h" local="no">lib.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classY_1a6b055700346213ead604973518123de5" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Y::money</definition>
+        <argsstring></argsstring>
+        <name>money</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.h" line="82" column="9" bodyfile="lib.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classY_1aeb12f35a9b30cfb8c150651155752aaa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Y::Y</definition>
+        <argsstring>()</argsstring>
+        <name>Y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.h" line="80" column="5" bodyfile="lib.h" bodystart="80" bodyend="80"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>A</label>
+        <link refid="classA"/>
+      </node>
+      <node id="2">
+        <label>W</label>
+        <link refid="classW"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>X</label>
+        <link refid="classX"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Y</label>
+        <link refid="classY"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>A</label>
+        <link refid="classA"/>
+      </node>
+      <node id="2">
+        <label>W</label>
+        <link refid="classW"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>X</label>
+        <link refid="classX"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Y</label>
+        <link refid="classY"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="lib.h" line="78" column="1" bodyfile="lib.h" bodystart="78" bodyend="83"/>
+    <listofallmembers>
+      <member refid="classA_1a4142862ec27f2f3d8deb026d51a5c5a0" prot="public" virt="non-virtual"><scope>Y</scope><name>A</name></member>
+      <member refid="classA_1aa3b8e8725e3dbab118afaaad2c49b0aa" prot="public" virt="virtual"><scope>Y</scope><name>get_money</name></member>
+      <member refid="classY_1a6b055700346213ead604973518123de5" prot="private" virt="non-virtual"><scope>Y</scope><name>money</name></member>
+      <member refid="classA_1acf0dc32b7f86a2f74c60496ab557b38c" prot="public" virt="non-virtual"><scope>Y</scope><name>ret_a</name></member>
+      <member refid="classA_1af8cd7af3b585906e7691af494ced6adb" prot="public" virt="non-virtual"><scope>Y</scope><name>ret_b</name></member>
+      <member refid="classA_1a68400c606c0e5fa7324bb5d5f7b2a718" prot="public" virt="non-virtual"><scope>Y</scope><name>set_money</name></member>
+      <member refid="classW_1ae01201da75d10b39f05e2af448f75bec" prot="public" virt="non-virtual"><scope>Y</scope><name>W</name></member>
+      <member refid="classX_1ad0df9fcaa438f659091b4b71969085a6" prot="public" virt="non-virtual"><scope>Y</scope><name>X</name></member>
+      <member refid="classY_1aeb12f35a9b30cfb8c150651155752aaa" prot="public" virt="non-virtual"><scope>Y</scope><name>Y</name></member>
+      <member refid="classA_1a95ca2450d3c41c6fe2838d601ecbf81c" prot="public" virt="virtual"><scope>Y</scope><name>~A</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

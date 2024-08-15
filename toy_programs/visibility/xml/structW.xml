@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structW" kind="struct" language="C++" prot="public">
+    <compoundname>W</compoundname>
+    <basecompoundref refid="classA" prot="public" virt="non-virtual">A</basecompoundref>
+    <derivedcompoundref refid="structY" prot="protected" virt="non-virtual">Y</derivedcompoundref>
+    <includes refid="lib_8h" local="no">lib.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="structW_1adb266d9809423906d641a468b36ce520" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int W::money</definition>
+        <argsstring></argsstring>
+        <name>money</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.h" line="63" column="9" bodyfile="lib.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structW_1ae01201da75d10b39f05e2af448f75bec" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>W::W</definition>
+        <argsstring>()</argsstring>
+        <name>W</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.h" line="58" column="5" bodyfile="lib.h" bodystart="58" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="structW_1aad8b3890163f4202d78506b549927c06" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int W::w_public_get</definition>
+        <argsstring>()</argsstring>
+        <name>w_public_get</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.h" line="59" column="9" bodyfile="lib.h" bodystart="59" bodyend="59"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="structW_1ab05b1f8fdda9d1d330859657b7090dc4" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int W::w_prot_get</definition>
+        <argsstring>()</argsstring>
+        <name>w_prot_get</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.h" line="61" column="9" bodyfile="lib.h" bodystart="61" bodyend="61"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>A</label>
+        <link refid="classA"/>
+      </node>
+      <node id="1">
+        <label>W</label>
+        <link refid="structW"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Y</label>
+        <link refid="structY"/>
+        <childnode refid="1" relation="protected-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>A</label>
+        <link refid="classA"/>
+      </node>
+      <node id="1">
+        <label>W</label>
+        <link refid="structW"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="lib.h" line="56" column="1" bodyfile="lib.h" bodystart="56" bodyend="64"/>
+    <listofallmembers>
+      <member refid="classA_1a4142862ec27f2f3d8deb026d51a5c5a0" prot="public" virt="non-virtual"><scope>W</scope><name>A</name></member>
+      <member refid="classA_1a7ed803518926644a53d1916f1e48c614" prot="public" virt="non-virtual"><scope>W</scope><name>A</name></member>
+      <member refid="classA_1afe2ab358d90b91f569551bce8d291ff2" prot="public" virt="non-virtual"><scope>W</scope><name>GetBalance</name></member>
+      <member refid="classA_1a4bccc30635f59ae68df71cd185d92066" prot="public" virt="non-virtual"><scope>W</scope><name>GetBalanceFrom</name></member>
+      <member refid="structW_1adb266d9809423906d641a468b36ce520" prot="private" virt="non-virtual"><scope>W</scope><name>money</name></member>
+      <member refid="classA_1ac352aec217707d6b3c7bf9434041b5de" prot="protected" virt="non-virtual"><scope>W</scope><name>SetBalance</name></member>
+      <member refid="structW_1ae01201da75d10b39f05e2af448f75bec" prot="public" virt="non-virtual"><scope>W</scope><name>W</name></member>
+      <member refid="structW_1ab05b1f8fdda9d1d330859657b7090dc4" prot="protected" virt="non-virtual"><scope>W</scope><name>w_prot_get</name></member>
+      <member refid="structW_1aad8b3890163f4202d78506b549927c06" prot="public" virt="non-virtual"><scope>W</scope><name>w_public_get</name></member>
+      <member refid="classA_1a95ca2450d3c41c6fe2838d601ecbf81c" prot="public" virt="virtual"><scope>W</scope><name>~A</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

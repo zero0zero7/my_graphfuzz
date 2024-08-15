@@ -1,0 +1,49 @@
+struct_C:
+  alloc_with_new: true
+  base: []
+  default_destructor: true
+  derived:
+  - E
+  headers:
+  - lib.h
+  methods:
+  - - C()
+    - {}
+  - &id001
+    - int get_money()
+    - {}
+  - - char ret_a()
+    - {}
+  - - char ret_b()
+    - {}
+  - &id002
+    - void set_money(int x)
+    - {}
+  name: C
+  static_methods:
+  - - char A::non_virt()
+    - {}
+  type: struct
+struct_D:
+  alloc_with_new: true
+  base: []
+  default_destructor: true
+  derived: []
+  headers:
+  - lib.h
+  methods:
+  - - void b_func()
+    - {}
+  - - D()
+    - {}
+  - *id001
+  - - char ret_a()
+    - {}
+  - - char ret_b()
+    - {}
+  - *id002
+  name: D
+  static_methods:
+  - - char D::non_virt()
+    - {}
+  type: struct

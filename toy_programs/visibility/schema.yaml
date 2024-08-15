@@ -1,0 +1,119 @@
+struct_A:
+  alloc_with_new: true
+  base: []
+  default_destructor: true
+  derived:
+  - ClassB
+  - ClassC
+  - ClassX
+  - W
+  headers:
+  - lib.h
+  methods:
+  - - A()
+    - {}
+  - - A(double d)
+    - {}
+  - &id001
+    - double GetBalance()
+    - {}
+  - &id002
+    - double GetBalanceFrom(A *a)
+    - {}
+  name: A
+  static_methods: []
+  type: struct
+struct_ClassB:
+  alloc_with_new: true
+  base:
+  - A
+  default_destructor: true
+  derived: []
+  headers:
+  - lib.h
+  methods:
+  - - int b_public_get()
+    - {}
+  - - ClassB()
+    - {}
+  name: ClassB
+  static_methods: []
+  type: struct
+struct_ClassC:
+  alloc_with_new: true
+  base:
+  - A
+  default_destructor: true
+  derived:
+  - ClassE
+  headers:
+  - lib.h
+  methods:
+  - - ClassC()
+    - {}
+  - *id001
+  - *id002
+  name: ClassC
+  static_methods: []
+  type: struct
+struct_ClassE:
+  alloc_with_new: true
+  base:
+  - ClassC
+  default_destructor: true
+  derived: []
+  headers:
+  - lib.h
+  methods:
+  - - ClassE()
+    - {}
+  name: ClassE
+  static_methods: []
+  type: struct
+struct_ClassX:
+  alloc_with_new: true
+  base:
+  - A
+  default_destructor: true
+  derived: []
+  headers:
+  - lib.h
+  methods:
+  - - ClassX()
+    - {}
+  name: ClassX
+  static_methods: []
+  type: struct
+struct_W:
+  alloc_with_new: true
+  base:
+  - A
+  default_destructor: true
+  derived:
+  - Y
+  headers:
+  - lib.h
+  methods:
+  - *id001
+  - *id002
+  - - W()
+    - {}
+  - - int w_public_get()
+    - {}
+  name: W
+  static_methods: []
+  type: struct
+struct_Y:
+  alloc_with_new: true
+  base:
+  - W
+  default_destructor: true
+  derived: []
+  headers:
+  - lib.h
+  methods:
+  - - Y()
+    - {}
+  name: Y
+  static_methods: []
+  type: struct

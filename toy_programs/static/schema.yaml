@@ -1,0 +1,128 @@
+struct_A:
+  alloc_with_new: true
+  base: []
+  default_destructor: true
+  derived:
+  - ClassB
+  - ClassC
+  - ClassX
+  - W
+  headers:
+  - lib.h
+  methods:
+  - - A()
+    - {}
+  - - A(double d)
+    - {}
+  - &id001
+    - double retbal()
+    - {}
+  name: A
+  static_methods:
+  - &id002
+    - double A::GetBalanceFrom(A *a)
+    - {}
+  - &id003
+    - void A::static_print()
+    - {}
+  type: struct
+struct_ClassB:
+  alloc_with_new: true
+  base:
+  - A
+  default_destructor: true
+  derived: []
+  headers:
+  - lib.h
+  methods:
+  - - ClassB()
+    - {}
+  name: ClassB
+  static_methods:
+  - - int ClassB::b_id()
+    - {}
+  type: struct
+struct_ClassC:
+  alloc_with_new: true
+  base:
+  - A
+  default_destructor: true
+  derived:
+  - ClassE
+  headers:
+  - lib.h
+  methods:
+  - - ClassC()
+    - {}
+  - *id001
+  name: ClassC
+  static_methods:
+  - *id002
+  - *id003
+  type: struct
+struct_ClassE:
+  alloc_with_new: true
+  base:
+  - ClassC
+  default_destructor: true
+  derived: []
+  headers:
+  - lib.h
+  methods:
+  - - ClassE()
+    - {}
+  name: ClassE
+  static_methods:
+  - - void ClassE::static_e()
+    - {}
+  type: struct
+struct_ClassX:
+  alloc_with_new: true
+  base:
+  - A
+  default_destructor: true
+  derived: []
+  headers:
+  - lib.h
+  methods:
+  - - ClassX()
+    - {}
+  name: ClassX
+  static_methods: []
+  type: struct
+struct_W:
+  alloc_with_new: true
+  base:
+  - A
+  default_destructor: true
+  derived:
+  - Y
+  headers:
+  - lib.h
+  methods:
+  - *id001
+  - - W()
+    - {}
+  name: W
+  static_methods:
+  - *id002
+  - *id003
+  - - int W::w_public_get()
+    - {}
+  type: struct
+struct_Y:
+  alloc_with_new: true
+  base:
+  - W
+  default_destructor: true
+  derived: []
+  headers:
+  - lib.h
+  methods:
+  - - Y()
+    - {}
+  name: Y
+  static_methods:
+  - - void Y::static_y()
+    - {}
+  type: struct

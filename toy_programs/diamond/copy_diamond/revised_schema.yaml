@@ -1,0 +1,142 @@
+struct_A:
+  alloc_with_new: true
+  base: []
+  default_destructor: true
+  derived:
+  - B
+  - C
+  headers:
+  - lib.h
+  methods:
+  - - A()
+    - {}
+  - &id001
+    - int get_num()
+    - {}
+  - &id002
+    - char ret_b()
+    - {}
+  name: A
+  static_methods:
+  - &id003
+    - char A::ret_a()
+    - {}
+  type: struct
+struct_B:
+  alloc_with_new: true
+  base:
+  - A
+  default_destructor: true
+  derived:
+  - D
+  headers:
+  - lib.h
+  methods:
+  - - B()
+    - {}
+  - &id004
+    - void b_func()
+    - {}
+  - *id001
+  - *id002
+  name: B
+  static_methods:
+  - *id003
+  type: struct
+struct_C:
+  alloc_with_new: true
+  base:
+  - A
+  default_destructor: true
+  derived:
+  - E
+  headers:
+  - lib.h
+  methods:
+  - - C()
+    - {}
+  - *id001
+  - - int ret_a()
+    - {}
+  - *id002
+  name: C
+  static_methods: []
+  type: struct
+struct_D:
+  alloc_with_new: true
+  base:
+  - B
+  default_destructor: true
+  derived:
+  - E
+  headers:
+  - lib.h
+  methods:
+  - *id004
+  - - D()
+    - {}
+  - *id001
+  - - int ret_a()
+    - {}
+  - *id002
+  name: D
+  static_methods: []
+  type: struct
+struct_E:
+  alloc_with_new: true
+  base:
+  - D
+  - C
+  default_destructor: true
+  derived: []
+  headers:
+  - lib.h
+  methods:
+  - *id004
+  - - E()
+    - {}
+  - int get_num_0D():
+      inputs: ['E']
+      outputs: ['E']
+      args: []
+      exec: |
+        ((D *)$i0)->get_num();
+        $o0 = $i0;
+  - int get_num_1C():
+      inputs: ['E']
+      outputs: ['E']
+      args: []
+      exec: |
+        ((C *)$i0)->get_num();
+        $o0 = $i0;
+  - int ret_a_0D():
+      inputs: ['E']
+      outputs: ['E']
+      args: []
+      exec: |
+        ((D *)$i0)->ret_a();
+        $o0 = $i0;
+  - char ret_b_0D():
+      inputs: ['E']
+      outputs: ['E']
+      args: []
+      exec: |
+        ((D *)$i0)->ret_b();
+        $o0 = $i0;
+  - int ret_a_1C():
+      inputs: ['E']
+      outputs: ['E']
+      args: []
+      exec: |
+        ((C *)$i0)->ret_a();
+        $o0 = $i0;
+  - char ret_b_1C():
+      inputs: ['E']
+      outputs: ['E']
+      args: []
+      exec: |
+        ((C *)$i0)->ret_b();
+        $o0 = $i0;
+  name: E
+  static_methods: []
+  type: struct

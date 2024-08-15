@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classE" kind="class" language="C++" prot="public">
+    <compoundname>E</compoundname>
+    <basecompoundref refid="classD" prot="public" virt="non-virtual">D</basecompoundref>
+    <basecompoundref refid="classC" prot="public" virt="non-virtual">C</basecompoundref>
+    <includes refid="lib_8h" local="no">lib.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classE_1a10d8ed2ea02a82bffe9ecbfdfc0bbab5" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int E::num</definition>
+        <argsstring></argsstring>
+        <name>num</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.h" line="67" column="9" bodyfile="lib.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classE_1ac26294d340a47c6a51c615c177052c91" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>E::E</definition>
+        <argsstring>()</argsstring>
+        <name>E</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.h" line="65" column="5" bodyfile="lib.h" bodystart="65" bodyend="65"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4">
+        <label>A</label>
+        <link refid="classA"/>
+      </node>
+      <node id="3">
+        <label>B</label>
+        <link refid="classB"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>C</label>
+        <link refid="classC"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>D</label>
+        <link refid="classD"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>E</label>
+        <link refid="classE"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="4">
+        <label>A</label>
+        <link refid="classA"/>
+      </node>
+      <node id="3">
+        <label>B</label>
+        <link refid="classB"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>C</label>
+        <link refid="classC"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>D</label>
+        <link refid="classD"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>E</label>
+        <link refid="classE"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="lib.h" line="63" column="1" bodyfile="lib.h" bodystart="63" bodyend="68"/>
+    <listofallmembers>
+      <member refid="classA_1a4142862ec27f2f3d8deb026d51a5c5a0" prot="public" virt="non-virtual" ambiguityscope="D::"><scope>E</scope><name>A</name></member>
+      <member refid="classA_1a4142862ec27f2f3d8deb026d51a5c5a0" prot="public" virt="non-virtual" ambiguityscope="C::"><scope>E</scope><name>A</name></member>
+      <member refid="classB_1a9532a74021f7efb003dffbc9d4145e65" prot="public" virt="non-virtual"><scope>E</scope><name>B</name></member>
+      <member refid="classB_1afe2bfa6692d3b0dd1546e5f9b181209c" prot="public" virt="non-virtual"><scope>E</scope><name>b_func</name></member>
+      <member refid="classC_1a05e6ea25c8ae42d5080bcbd96288240c" prot="public" virt="non-virtual"><scope>E</scope><name>C</name></member>
+      <member refid="classD_1aaa9c0c32402aef951a8c23b6ac6e8913" prot="public" virt="non-virtual"><scope>E</scope><name>D</name></member>
+      <member refid="classE_1ac26294d340a47c6a51c615c177052c91" prot="public" virt="non-virtual"><scope>E</scope><name>E</name></member>
+      <member refid="classA_1a6c3a41fdddef931d2838616cfea2b9f1" prot="public" virt="virtual"><scope>E</scope><name>get_num</name></member>
+      <member refid="classE_1a10d8ed2ea02a82bffe9ecbfdfc0bbab5" prot="private" virt="non-virtual"><scope>E</scope><name>num</name></member>
+      <member refid="classD_1a19cf61a222a99eb85de7c983b2fb26bf" prot="public" virt="non-virtual" ambiguityscope="D::"><scope>E</scope><name>ret_a</name></member>
+      <member refid="classC_1aa30be288738b6c0368f0cb78f79a8bc3" prot="public" virt="non-virtual" ambiguityscope="C::"><scope>E</scope><name>ret_a</name></member>
+      <member refid="classA_1af8cd7af3b585906e7691af494ced6adb" prot="public" virt="non-virtual" ambiguityscope="D::"><scope>E</scope><name>ret_b</name></member>
+      <member refid="classA_1af8cd7af3b585906e7691af494ced6adb" prot="public" virt="non-virtual" ambiguityscope="C::"><scope>E</scope><name>ret_b</name></member>
+      <member refid="classA_1a95ca2450d3c41c6fe2838d601ecbf81c" prot="public" virt="virtual"><scope>E</scope><name>~A</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

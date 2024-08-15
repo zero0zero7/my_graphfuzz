@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.1" xml:lang="en-US">
+  <compound refid="classA" kind="class"><name>A</name>
+    <member refid="classA_1a65efe0d75b2ef4d8057f0d84061323dd" kind="variable"><name>_balance</name></member>
+    <member refid="classA_1a4142862ec27f2f3d8deb026d51a5c5a0" kind="function"><name>A</name></member>
+    <member refid="classA_1a7ed803518926644a53d1916f1e48c614" kind="function"><name>A</name></member>
+    <member refid="classA_1a5046a9047181602ef1bb4e5495ee1211" kind="function"><name>retbal</name></member>
+    <member refid="classA_1ab3428574831a17f9755414c5ed02849e" kind="function"><name>GetBalanceFrom</name></member>
+    <member refid="classA_1a79fedc1bfefb1dca6bcab74dac911f0b" kind="function"><name>static_print</name></member>
+    <member refid="classA_1ac352aec217707d6b3c7bf9434041b5de" kind="function"><name>SetBalance</name></member>
+    <member refid="classA_1aa38822c286d333365e8dd22a5fa02467" kind="function"><name>static_prot</name></member>
+  </compound>
+  <compound refid="classClassB" kind="class"><name>ClassB</name>
+    <member refid="classClassB_1ad4ae6d63a5d9289c0684c13fb06893a3" kind="variable"><name>money</name></member>
+    <member refid="classClassB_1abd8a4b297f9096bf54eecdc62f97c32b" kind="variable"><name>id</name></member>
+    <member refid="classClassB_1a340d471e25b80ff60b6fe0fa94aa073b" kind="function"><name>ClassB</name></member>
+    <member refid="classClassB_1afb24d6933a0379fb40d2872815ca89c7" kind="function"><name>b_id</name></member>
+  </compound>
+  <compound refid="classClassC" kind="class"><name>ClassC</name>
+    <member refid="classClassC_1af70ee227fec90d81ace1575ea0c500c4" kind="variable"><name>money</name></member>
+    <member refid="classClassC_1a3e9e87c9cbcfa00afa1c76b289955231" kind="function"><name>ClassC</name></member>
+    <member refid="classClassC_1ae6c6cd5e2225feace181978c3546fdb5" kind="function"><name>c_prot_get</name></member>
+  </compound>
+  <compound refid="classClassE" kind="class"><name>ClassE</name>
+    <member refid="classClassE_1a7e265f52d983fae5b81e73c5a7d34081" kind="variable"><name>id</name></member>
+    <member refid="classClassE_1abe7df8f9d4416c5f7c5ad549997ada41" kind="function"><name>ClassE</name></member>
+    <member refid="classClassE_1a3a3bcea95aac32b824f19d797f709a0b" kind="function"><name>static_e</name></member>
+  </compound>
+  <compound refid="structClassX" kind="struct"><name>ClassX</name>
+    <member refid="structClassX_1a87f862b83405b64b161d8d48aa2b64a4" kind="variable"><name>money</name></member>
+    <member refid="structClassX_1aca376af30cea73e0e6bd50187d92d3c6" kind="function"><name>ClassX</name></member>
+    <member refid="structClassX_1af775df76523e4dfea5720a559987458b" kind="function"><name>x_prot_get</name></member>
+    <member refid="structClassX_1ab3a84d09d520c5b107f880d0a8e01bdf" kind="function"><name>static_x</name></member>
+  </compound>
+  <compound refid="structW" kind="struct"><name>W</name>
+    <member refid="structW_1adb266d9809423906d641a468b36ce520" kind="variable"><name>money</name></member>
+    <member refid="structW_1ae01201da75d10b39f05e2af448f75bec" kind="function"><name>W</name></member>
+    <member refid="structW_1a1361743d9a27bfffa627e1b58b9d16f0" kind="function"><name>w_public_get</name></member>
+    <member refid="structW_1ab05b1f8fdda9d1d330859657b7090dc4" kind="function"><name>w_prot_get</name></member>
+  </compound>
+  <compound refid="structY" kind="struct"><name>Y</name>
+    <member refid="structY_1ad89505b17ae62e55f7b5c2884f71163a" kind="variable"><name>id</name></member>
+    <member refid="structY_1aeb12f35a9b30cfb8c150651155752aaa" kind="function"><name>Y</name></member>
+    <member refid="structY_1ab6caa39b72ad73b65c0b11563c17dfd0" kind="function"><name>static_y</name></member>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="lib_8h" kind="file"><name>lib.h</name>
+  </compound>
+</doxygenindex>

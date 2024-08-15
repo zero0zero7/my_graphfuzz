@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classA" kind="class" language="C++" prot="public">
+    <compoundname>A</compoundname>
+    <derivedcompoundref refid="classB" prot="public" virt="non-virtual">B</derivedcompoundref>
+    <derivedcompoundref refid="classC" prot="public" virt="non-virtual">C</derivedcompoundref>
+    <includes refid="lib_8h" local="no">lib.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classA_1a1d2712bd872f518ab89caa741a70120d" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int A::num</definition>
+        <argsstring></argsstring>
+        <name>num</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.h" line="27" column="9" bodyfile="lib.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classA_1a4142862ec27f2f3d8deb026d51a5c5a0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>A::A</definition>
+        <argsstring>()</argsstring>
+        <name>A</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.h" line="18" column="5" bodyfile="lib.h" bodystart="18" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classA_1a6c3a41fdddef931d2838616cfea2b9f1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>int</type>
+        <definition>virtual int A::get_num</definition>
+        <argsstring>()</argsstring>
+        <name>get_num</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.h" line="20" column="17" bodyfile="lib.h" bodystart="20" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classA_1af8cd7af3b585906e7691af494ced6adb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char</type>
+        <definition>char A::ret_b</definition>
+        <argsstring>()</argsstring>
+        <name>ret_b</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.h" line="23" column="10" bodyfile="lib.h" bodystart="73" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classA_1a95ca2450d3c41c6fe2838d601ecbf81c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual A::~A</definition>
+        <argsstring>()</argsstring>
+        <name>~A</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.h" line="25" column="13" bodyfile="lib.h" bodystart="25" bodyend="25"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classA_1acf0dc32b7f86a2f74c60496ab557b38c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>char</type>
+        <definition>static char A::ret_a</definition>
+        <argsstring>()</argsstring>
+        <name>ret_a</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.h" line="22" column="17" bodyfile="lib.h" bodystart="22" bodyend="22"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>A</label>
+        <link refid="classA"/>
+      </node>
+      <node id="2">
+        <label>B</label>
+        <link refid="classB"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>C</label>
+        <link refid="classC"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>D</label>
+        <link refid="classD"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>E</label>
+        <link refid="classE"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="lib.h" line="16" column="1" bodyfile="lib.h" bodystart="16" bodyend="28"/>
+    <listofallmembers>
+      <member refid="classA_1a4142862ec27f2f3d8deb026d51a5c5a0" prot="public" virt="non-virtual"><scope>A</scope><name>A</name></member>
+      <member refid="classA_1a6c3a41fdddef931d2838616cfea2b9f1" prot="public" virt="virtual"><scope>A</scope><name>get_num</name></member>
+      <member refid="classA_1a1d2712bd872f518ab89caa741a70120d" prot="private" virt="non-virtual"><scope>A</scope><name>num</name></member>
+      <member refid="classA_1acf0dc32b7f86a2f74c60496ab557b38c" prot="public" virt="non-virtual"><scope>A</scope><name>ret_a</name></member>
+      <member refid="classA_1af8cd7af3b585906e7691af494ced6adb" prot="public" virt="non-virtual"><scope>A</scope><name>ret_b</name></member>
+      <member refid="classA_1a95ca2450d3c41c6fe2838d601ecbf81c" prot="public" virt="virtual"><scope>A</scope><name>~A</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

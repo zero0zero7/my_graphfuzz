@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.1" xml:lang="en-US">
+  <compound refid="classA" kind="class"><name>A</name>
+    <member refid="classA_1adc25eb4123200edcefa0db70d72b27cf" kind="variable"><name>money</name></member>
+    <member refid="classA_1a4142862ec27f2f3d8deb026d51a5c5a0" kind="function"><name>A</name></member>
+    <member refid="classA_1ac829d84c1ffb9a5374b8b7937758f316" kind="function"><name>get_money</name></member>
+    <member refid="classA_1a68400c606c0e5fa7324bb5d5f7b2a718" kind="function"><name>set_money</name></member>
+    <member refid="classA_1a0d1e9c33524aefec62ca479b2b4a78fc" kind="function"><name>ret_a</name></member>
+    <member refid="classA_1ae1d41a1e7eb197f8dd32dee3960bec02" kind="function"><name>ret_b</name></member>
+    <member refid="classA_1a73a4b6f8e462b788660a5f230e623bd9" kind="function"><name>non_virt</name></member>
+  </compound>
+  <compound refid="classB" kind="class"><name>B</name>
+    <member refid="classB_1a52104ff29b55be04bc680660168d20f3" kind="variable"><name>money</name></member>
+    <member refid="classB_1a9532a74021f7efb003dffbc9d4145e65" kind="function"><name>B</name></member>
+    <member refid="classB_1aacd886fc6c23f3aec59720857e15021b" kind="function"><name>b_func</name></member>
+    <member refid="classB_1a651ac3292e87b1ae55b23b9ead46106d" kind="function"><name>ret_a</name></member>
+    <member refid="classB_1a428f51e7c9868f8faddc5ca0c4caf896" kind="function"><name>non_virt</name></member>
+  </compound>
+  <compound refid="classC" kind="class"><name>C</name>
+    <member refid="classC_1a80490d771d1c6198ea59c2e99d4374d1" kind="variable"><name>money</name></member>
+    <member refid="classC_1a05e6ea25c8ae42d5080bcbd96288240c" kind="function"><name>C</name></member>
+    <member refid="classC_1a75fb3b2fbfc574f20941efb3fb74d9d2" kind="function"><name>ret_b</name></member>
+  </compound>
+  <compound refid="classD" kind="class"><name>D</name>
+    <member refid="classD_1a0ad8efa99ed39d0a2aa93c3fed6398c1" kind="variable"><name>money</name></member>
+    <member refid="classD_1aaa9c0c32402aef951a8c23b6ac6e8913" kind="function"><name>D</name></member>
+    <member refid="classD_1a1c07937b9cfa41b8edeafb5f1e93d3bc" kind="function"><name>ret_b</name></member>
+    <member refid="classD_1abbe2bf032aa8a90a0d12cde69336dc6d" kind="function"><name>non_virt</name></member>
+  </compound>
+  <compound refid="classE" kind="class"><name>E</name>
+    <member refid="classE_1a64821069db3a5da6b8655d90adbf7f08" kind="variable"><name>money</name></member>
+    <member refid="classE_1ac26294d340a47c6a51c615c177052c91" kind="function"><name>E</name></member>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="lib_8h" kind="file"><name>lib.h</name>
+  </compound>
+</doxygenindex>

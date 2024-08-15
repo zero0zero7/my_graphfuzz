@@ -1,0 +1,105 @@
+struct_A:
+  alloc_with_new: true
+  base: []
+  default_destructor: true
+  derived:
+  - B
+  - C
+  headers:
+  - lib.h
+  methods:
+  - - A()
+    - {}
+  - &id001
+    - int get_num()
+    - {}
+  - &id002
+    - char ret_b()
+    - {}
+  name: A
+  static_methods:
+  - &id003
+    - char A::ret_a()
+    - {}
+  type: struct
+struct_B:
+  alloc_with_new: true
+  base:
+  - A
+  default_destructor: true
+  derived:
+  - D
+  headers:
+  - lib.h
+  methods:
+  - - B()
+    - {}
+  - &id004
+    - void b_func()
+    - {}
+  - *id001
+  - *id002
+  name: B
+  static_methods:
+  - *id003
+  type: struct
+struct_C:
+  alloc_with_new: true
+  base:
+  - A
+  default_destructor: true
+  derived:
+  - E
+  headers:
+  - lib.h
+  methods:
+  - - C()
+    - {}
+  - *id001
+  - - int ret_a()
+    - {}
+  - *id002
+  name: C
+  static_methods: []
+  type: struct
+struct_D:
+  alloc_with_new: true
+  base:
+  - B
+  default_destructor: true
+  derived:
+  - E
+  headers:
+  - lib.h
+  methods:
+  - *id004
+  - - D()
+    - {}
+  - *id001
+  - - int ret_a()
+    - {}
+  - *id002
+  name: D
+  static_methods: []
+  type: struct
+struct_E:
+  alloc_with_new: true
+  base:
+  - D
+  - C
+  default_destructor: true
+  derived: []
+  headers:
+  - lib.h
+  methods:
+  - *id004
+  - - E()
+    - {}
+  - *id001
+  - ret_b_0D*TODO*
+  - ret_a_0D*TODO*
+  - ret_b_1C*TODO*
+  - ret_a_1C*TODO*
+  name: E
+  static_methods: []
+  type: struct

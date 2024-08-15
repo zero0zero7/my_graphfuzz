@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structY" kind="struct" language="C++" prot="public">
+    <compoundname>Y</compoundname>
+    <basecompoundref refid="structW" prot="protected" virt="non-virtual">W</basecompoundref>
+    <includes refid="lib_8h" local="no">lib.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="structY_1ad89505b17ae62e55f7b5c2884f71163a" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Y::id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.h" line="83" column="9" bodyfile="lib.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structY_1aeb12f35a9b30cfb8c150651155752aaa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Y::Y</definition>
+        <argsstring>()</argsstring>
+        <name>Y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.h" line="81" column="5" bodyfile="lib.h" bodystart="81" bodyend="81"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>A</label>
+        <link refid="classA"/>
+      </node>
+      <node id="2">
+        <label>W</label>
+        <link refid="structW"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Y</label>
+        <link refid="structY"/>
+        <childnode refid="2" relation="protected-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>A</label>
+        <link refid="classA"/>
+      </node>
+      <node id="2">
+        <label>W</label>
+        <link refid="structW"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Y</label>
+        <link refid="structY"/>
+        <childnode refid="2" relation="protected-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="lib.h" line="79" column="1" bodyfile="lib.h" bodystart="79" bodyend="84"/>
+    <listofallmembers>
+      <member refid="classA_1a4142862ec27f2f3d8deb026d51a5c5a0" prot="protected" virt="non-virtual"><scope>Y</scope><name>A</name></member>
+      <member refid="classA_1a7ed803518926644a53d1916f1e48c614" prot="protected" virt="non-virtual"><scope>Y</scope><name>A</name></member>
+      <member refid="classA_1afe2ab358d90b91f569551bce8d291ff2" prot="protected" virt="non-virtual"><scope>Y</scope><name>GetBalance</name></member>
+      <member refid="classA_1a4bccc30635f59ae68df71cd185d92066" prot="protected" virt="non-virtual"><scope>Y</scope><name>GetBalanceFrom</name></member>
+      <member refid="structY_1ad89505b17ae62e55f7b5c2884f71163a" prot="private" virt="non-virtual"><scope>Y</scope><name>id</name></member>
+      <member refid="classA_1ac352aec217707d6b3c7bf9434041b5de" prot="protected" virt="non-virtual"><scope>Y</scope><name>SetBalance</name></member>
+      <member refid="structW_1ae01201da75d10b39f05e2af448f75bec" prot="protected" virt="non-virtual"><scope>Y</scope><name>W</name></member>
+      <member refid="structW_1ab05b1f8fdda9d1d330859657b7090dc4" prot="protected" virt="non-virtual"><scope>Y</scope><name>w_prot_get</name></member>
+      <member refid="structW_1aad8b3890163f4202d78506b549927c06" prot="protected" virt="non-virtual"><scope>Y</scope><name>w_public_get</name></member>
+      <member refid="structY_1aeb12f35a9b30cfb8c150651155752aaa" prot="public" virt="non-virtual"><scope>Y</scope><name>Y</name></member>
+      <member refid="classA_1a95ca2450d3c41c6fe2838d601ecbf81c" prot="protected" virt="virtual"><scope>Y</scope><name>~A</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

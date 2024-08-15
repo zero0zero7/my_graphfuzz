@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classB" kind="class" language="C++" prot="public">
+    <compoundname>B</compoundname>
+    <basecompoundref refid="classA" prot="public" virt="non-virtual">A</basecompoundref>
+    <derivedcompoundref refid="classD" prot="public" virt="non-virtual">D</derivedcompoundref>
+    <derivedcompoundref refid="classE" prot="public" virt="non-virtual">E</derivedcompoundref>
+    <includes refid="lib_8h" local="no">lib.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classB_1a52104ff29b55be04bc680660168d20f3" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int B::money</definition>
+        <argsstring></argsstring>
+        <name>money</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.h" line="35" column="9" bodyfile="lib.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classB_1a9532a74021f7efb003dffbc9d4145e65" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>B::B</definition>
+        <argsstring>()</argsstring>
+        <name>B</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.h" line="30" column="5" bodyfile="lib.h" bodystart="30" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classB_1aacd886fc6c23f3aec59720857e15021b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void B::b_func</definition>
+        <argsstring>()</argsstring>
+        <name>b_func</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.h" line="31" column="18" bodyfile="lib.h" bodystart="31" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classB_1a651ac3292e87b1ae55b23b9ead46106d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>char</type>
+        <definition>char B::ret_a</definition>
+        <argsstring>()</argsstring>
+        <name>ret_a</name>
+        <reimplements refid="classA_1a0d1e9c33524aefec62ca479b2b4a78fc">ret_a</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.h" line="32" column="10" bodyfile="lib.h" bodystart="32" bodyend="32"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classB_1a428f51e7c9868f8faddc5ca0c4caf896" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>char</type>
+        <definition>static char B::non_virt</definition>
+        <argsstring>()</argsstring>
+        <name>non_virt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib.h" line="33" column="17" bodyfile="lib.h" bodystart="33" bodyend="33"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>A</label>
+        <link refid="classA"/>
+      </node>
+      <node id="1">
+        <label>B</label>
+        <link refid="classB"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>D</label>
+        <link refid="classD"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>E</label>
+        <link refid="classE"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>A</label>
+        <link refid="classA"/>
+      </node>
+      <node id="1">
+        <label>B</label>
+        <link refid="classB"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="lib.h" line="28" column="1" bodyfile="lib.h" bodystart="28" bodyend="36"/>
+    <listofallmembers>
+      <member refid="classA_1a4142862ec27f2f3d8deb026d51a5c5a0" prot="public" virt="non-virtual"><scope>B</scope><name>A</name></member>
+      <member refid="classB_1a9532a74021f7efb003dffbc9d4145e65" prot="public" virt="non-virtual"><scope>B</scope><name>B</name></member>
+      <member refid="classB_1aacd886fc6c23f3aec59720857e15021b" prot="public" virt="virtual"><scope>B</scope><name>b_func</name></member>
+      <member refid="classA_1ac829d84c1ffb9a5374b8b7937758f316" prot="public" virt="non-virtual"><scope>B</scope><name>get_money</name></member>
+      <member refid="classB_1a52104ff29b55be04bc680660168d20f3" prot="private" virt="non-virtual"><scope>B</scope><name>money</name></member>
+      <member refid="classB_1a428f51e7c9868f8faddc5ca0c4caf896" prot="public" virt="non-virtual"><scope>B</scope><name>non_virt</name></member>
+      <member refid="classB_1a651ac3292e87b1ae55b23b9ead46106d" prot="public" virt="virtual"><scope>B</scope><name>ret_a</name></member>
+      <member refid="classA_1ae1d41a1e7eb197f8dd32dee3960bec02" prot="public" virt="pure-virtual"><scope>B</scope><name>ret_b</name></member>
+      <member refid="classA_1a68400c606c0e5fa7324bb5d5f7b2a718" prot="public" virt="non-virtual"><scope>B</scope><name>set_money</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
