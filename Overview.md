@@ -35,8 +35,12 @@ parser.o: parser.cpp
         $(CXX) -fno-rtti -O0 -I${CLANG_INC} -c $<
 
 run:
-        ./parser <path_to_target_lib_src_code> --
+        ./parser <path_to_target_lib_src_code> -- # might need additional cflags
 ```
 ## Notes
-- string not allowed in GraphFuzz, not included in their base_schema.yaml
+- Datatypes from std library not handled by GraphFuzz
+  - not primitive type, thus not included in the base_schema.yaml
+  - not class/structs defined in target library, thus not in schema.yaml
+  - so it becomes an ~unknown datatype 
+  - Either dont mutate them or write your own custom mutator for each of these datatypes
 - need to remove all .json .yaml files before re-generating them in event library src code changes

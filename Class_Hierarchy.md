@@ -14,7 +14,7 @@
 ## Implementation
 
 ### 1. Adding Inherited Methods to Subclass' Section in schema.yaml
-cli/cfuzz/commands/schema.py
+cli/gfuzz/commands/schema.py
 - Made use of a few global dictionaries to keep track of classes and their methods
   - all methods ---  class_name : [func_id]  eg. Dog : [classDog_1a90u309u39, classAnimal_34nkvninkd]
   - methods implemented by current class ---  class_name : [func_id]   eg. Dog : [classDog_1a90u309u39, classDog_1fninvkvd]
@@ -41,7 +41,7 @@ core/schema.hpp
 
 
 ### 3. Casting object from derived to base to allow future access to object through base pointer
-cli/cfuzz/commands/gen/cpp/gen_cpp.py 
+cli/gfuzz/commands/gen/cpp/gen_cpp.py 
 - make_classpairs(id_name, derived)
   - recursively generate all pairs of based-derived => "classpairs.inc"
 - make_shim_json(typ_dict: dict, scp_list: List)

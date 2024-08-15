@@ -194,8 +194,8 @@ extern "C" int LLVMFuzzerInitialize(int *argc, char ***argv) {
             cerr << "[*] GraphFuzz: tracing mutations..." << endl;
         }
 
-        // OPTION TO PRINT CONSTRUCTORS & DESTRUCTORS & CONSUMERS & PRODUCERS
-        if (strcmp(opt, "--classfuzz_nocondes") == 0) graphfuzz_nocondes = true;
+        // OPTION TO NOT PRINT CONSTRUCTORS & DESTRUCTORS & CONSUMERS & PRODUCERS
+        if (strcmp(opt, "--graphfuzz_nocondes") == 0) graphfuzz_nocondes = true;
     }
 
     global_schema = Schema::FromFile(graphfuzz_schema_path);
@@ -488,10 +488,13 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
                 // [0] to get type_id of first input ie the caller type
                 unsigned int s = (shm[to_string(prev_shim)])[0];
                 unsigned int t = (shm[to_string(n.type())])[0];
+                void (*casting)(void**, void**) = cast_map[t][s];
                 if (s != t) {
-                    cout << "require cast from derived " << s << " to base " << t << endl;
-                    void (*casting)(void**, void**) = cast_map[t][s];
-                    (*cast_map[t][s])(in_ref, in_ref);
+                    if (casting != nullptr) {
+                        cout << "require cast from derived " << s << " to base " << t << endl;
+                        (*cast_map[t][s])(in_ref, in_ref);
+                    }
+                    // else: s is not derived from t
                 }
             }
         }

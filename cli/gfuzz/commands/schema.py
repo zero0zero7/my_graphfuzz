@@ -32,8 +32,6 @@ parsed_nonstatic = {}
 # Global list of abstract classes
 abstr_cls = []
 
-# Changed info to become a global variable
-# else when calling extract_struct() recursively, nothing added to info
 all_info = []
 
 
@@ -168,7 +166,7 @@ def extract_struct(root: pathlib.Path, refid: str) -> Tuple[str, dict]:
 
     abstract = False 
 
-    # each key:value pair -- refid : [parent1, parent2, ]
+    # each key:value pair -- refid : [base1, base2, ]
     # instead use, list of ambi func's name
     ambi_nonstatic = []
     ambi_static = []
@@ -195,7 +193,7 @@ def extract_struct(root: pathlib.Path, refid: str) -> Tuple[str, dict]:
         str(k.string)
         for k in dat.find_all('includes')
     ]
-    info['alloc_with_new'] = True # use new() instead of static_cast&calloc
+    info['alloc_with_new'] = True # use new() instead of static_cast & calloc
 
     global parsed_nonstatic
     global parsed_static
@@ -205,13 +203,11 @@ def extract_struct(root: pathlib.Path, refid: str) -> Tuple[str, dict]:
         func_id =  func.attrs['id']
         func_ids.append(func_id)
         if func.attrs['static'] == "no":
-            # parsed_nonstatic[func_id] = parse_function(func)
             func_sig, func_name = parse_function(func)
             class_func = "{clas_name}::{func}".format(clas_name=info['name'], func=func_name)
             weights = map_risky(class_func)
             parsed_nonstatic[func_id] = [func_sig, weights]
         elif func.attrs['static'] == "yes":
-            # parsed_static[func_id] = parse_static_function(func)
             func_sig, func_name = parse_static_function(func)
             class_func = "{clas_name}::{func}".format(clas_name=info['name'], func=func_name)
             weights = map_risky(class_func)
@@ -245,7 +241,7 @@ def extract_struct(root: pathlib.Path, refid: str) -> Tuple[str, dict]:
             if nm[1:] in cls_curr.keys():
                 continue
         # handle ambiguity scope
-        # dont add into cls_funcs and hence func_ids, add into a local dict for ambi_funcs
+        # dont add into cls_funcs and hence func_ids, add into local list for ambiguous funcs
         if "ambiguityscope" in mem.attrs:
             if id in parsed_static.keys():
                 ambi_static.append(nm)
@@ -268,11 +264,10 @@ def extract_struct(root: pathlib.Path, refid: str) -> Tuple[str, dict]:
     info['static_methods'] = []
     for x in cls_funcs[info["name"]]:
         if x in parsed_nonstatic:
-            print(parsed_nonstatic[x], x)
             info['methods'].append(parsed_nonstatic[x])
         elif x in parsed_static:
             info['static_methods'].append(parsed_static[x])
-    # for each ambifunc, convert into func_1parent1name, func_2parent2name
+    # for each ambifunc, convert into func_1base1name, func_2base2name, ...
     for i in range(len(parents)):
         par = parents[i]
         if par not in abstr_cls:
@@ -283,12 +278,10 @@ def extract_struct(root: pathlib.Path, refid: str) -> Tuple[str, dict]:
         for x in set(ambi_nonstatic):
             ext_name = x + "_" + str(i) + par + "*TODO*"
             info['methods'].append(ext_name)
-    # Direct children class names
+    # Direct derived class names
     info['derived'] = []
     for child in dat.find_all('derivedcompoundref'):
         info['derived'].append(str(child.string))
-
-    print("INFO", info)
 
     all_info += [(f'struct_{info["name"]}', info)]
     return
@@ -308,7 +301,6 @@ def extract_all(root: pathlib.Path) -> dict:
         extract_file(root, str(k['refid']))
 
     global all_info
-    print("ALL", all_info)
     return {k:v for k,v in all_info}
 
 
@@ -319,7 +311,7 @@ def run_infer(args):
         print('[!] Could not parse doxygen output. Make sure there is an ' \
               '"index.xml" file in the target directory.')
         return
-    print("b4 dump", yaml.safe_dump(info))
+    # print("b4 dump", yaml.safe_dump(info)) # to check contents of "info" without anchorpoints
     open(args.output, 'w').write(yaml.dump(info))
     print(f'[*] Generated a schema with {len([k for k in info])} items.')
 
