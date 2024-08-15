@@ -1002,7 +1002,6 @@ def collect_scopes(schema: Schema, ignore_keywords: List[str] = [], generate_dry
 
             if 'methods' in obj:
                 for sig in obj['methods']:
-                    print(obj, "K", k, "SIG",sig, type(sig))
                     max_num += 1
                     if type(sig) is str:
                         sigs.append((sig, False))
@@ -1012,7 +1011,6 @@ def collect_scopes(schema: Schema, ignore_keywords: List[str] = [], generate_dry
                         weights.append(sig[1])
                         sigs.append((s, False))
                     else:
-                        print("CUSTOM")
                         custom.append(_build_custom_scope(sig))
 
             if 'static_methods' in obj:
@@ -1170,31 +1168,73 @@ def make_write_harness(schema: Schema, scopes: List[CPPScope]) -> str:
 
     return code
 
+# def make_classpairs(id_name, derived):
+#     result = {}
+#     for id in range(len(id_name.keys())): 
+#         result[id] = []
+#     def class_helper(t: int):
+#         nonlocal result
+#         nonlocal derived
+#         for s in derived[t]:
+#             if s not in result[t]:
+#                 class_helper(s)
+#                 result[t].append(s)
+#                 result[t] += result[s]
+#     for id in range(len(id_name.keys())):
+#         class_helper(id)
+#     strin = ""
+#     for id in range(len(result.keys())):
+#         for sub in result[id]:
+#             strin += "BASE2DERIVED({base},{derived})\n".format(base=id_name[id], derived=id_name[sub])
+#     f = open("classpairs.inc", "w")
+#     f.write(strin)
+#     f.close()
+
 def make_classpairs(id_name, derived):
+    print(id_name)
+    print(derived)
     result = {}
     for id in range(len(id_name.keys())): 
         result[id] = []
-    def class_helper(t: int):
-        nonlocal result
+    def class_helper(t: int, result: dict):
         nonlocal derived
         for s in derived[t]:
             if s not in result[t]:
-                class_helper(s)
+                class_helper(s, result)
                 result[t].append(s)
                 result[t] += result[s]
     for id in range(len(id_name.keys())):
-        class_helper(id)
+        class_helper(id, result)
+    print(result)
+    for id in range(len(result.keys())):
+        # result[id] = list(set(result[id]))
+        # for those with duplicates, pick any immediate subbase by getting any from derived[base]
+        uniq = []
+        dup = set()
+        for ele in result[id]:
+            if ele not in uniq:
+                uniq.append(ele)
+            else:
+                dup.add(ele)
+        result[id] = [uniq, dup]
     print(result)
     strin = ""
     for id in range(len(result.keys())):
-        for sub in result[id]:
-            strin += "BASE2DERIVED({base},{derived})\n".format(base=id_name[id], derived=id_name[sub])
-    f = open("classpairs.inc", "w")
+        derived_lst = result[id][0]
+        dup_set = result[id][0]
+        for sub in derived_lst:
+            if sub in dup_set:
+                # id of any (just pick the 0th index) immediate derived class of base
+                inter_id = derived[id][0]
+                strin += "BASE2DERIVED({base},{derived},{inter})\n".format(base=id_name[id], derived=id_name[sub], inter=id_name[inter_id])
+            else:
+                strin += "BASE2DERIVED({base},{derived},{inter})\n".format(base=id_name[id], derived=id_name[sub], inter=id_name[id])
+    f = open("new_classpairs.inc", "w")
     f.write(strin)
     f.close()
 
 def make_shim_json(typ_dict: dict, scp_list: List):
-    # shim_number: [input type ids]
+    # shim_number: [input/argument type ids]
     shim_in = {}
     for i in range(len(scp_list)): 
         scope = scp_list[i]
@@ -1237,7 +1277,6 @@ def make_fuzz_schema(schema: Schema, scopes: List[CPPScope]) -> dict:
     derived_dict = {}
     for d in deriveds:
         derived_dict[d['id']] = d['parent']
-    print(derived_dict, id_name)
     make_classpairs(id_name, derived_dict)
     make_shim_json(typ_dict=type_name_id, scp_list=scopes)
     return {
@@ -1341,12 +1380,43 @@ def duplicate_bundle_scopes(schema: Schema, scopes: List[CPPScope]) -> List[CPPS
     return scopes + extra_scopes
 
 
+# def build_cast_helper() -> str:
+#     cast_str = """
+# template <class B, class D> void __attribute__((visibility ("default"))) cast_helper(void** in, void** out) {
+#     D* d = reinterpret_cast<D*>(in[0]);
+#     // B* b = dynamic_cast<B*>(d);
+#     B* b = (B*)d;
+#     out[0] = reinterpret_cast<void *>(b);
+# }
+
+# typedef void (*cast_func)(void**, void**);
+
+# void build_cast_map(std::unordered_map<unsigned int, std::unordered_map<unsigned int, cast_func>>* cast_map) {
+# json sch;
+# std::ifstream sch_in(std::string("schema.json"));
+# sch_in >> sch;
+# std::unordered_map<std::string, unsigned int> name_id;
+# for (size_t i=0; i<sch["types"].size(); ++i) {
+#     name_id[sch["types"][i]["name"]] = ((sch["types"])[i])["id"];
+# }
+# #define BASE2DERIVED(Base, Derived) { \\
+#     unsigned b_id = name_id[#Base], \\
+#         d_id = name_id[#Derived]; \\
+#     /* remembers the instantiated cast */ \\
+#     (*cast_map)[b_id][d_id] = cast_helper<Base,Derived>; \\
+# }
+# #include "classpairs.inc"
+# #undef BASE2DERIVED
+# }
+# """
+#     return cast_str
+
 def build_cast_helper() -> str:
     cast_str = """
-template <class B, class D> void __attribute__((visibility ("default"))) cast_helper(void** in, void** out) {
+template <class B, class D, class SubB> void __attribute__((visibility ("default"))) cast_helper(void** in, void** out) {
     D* d = reinterpret_cast<D*>(in[0]);
-    // B* b = dynamic_cast<B*>(d);
-    B* b = (B*)d;
+    SubB* i = (SubB*)d;
+    B* b = (B*)i;
     out[0] = reinterpret_cast<void *>(b);
 }
 
@@ -1360,13 +1430,13 @@ std::unordered_map<std::string, unsigned int> name_id;
 for (size_t i=0; i<sch["types"].size(); ++i) {
     name_id[sch["types"][i]["name"]] = ((sch["types"])[i])["id"];
 }
-#define BASE2DERIVED(Base, Derived) { \\
+#define BASE2DERIVED(Base, Derived,SubBase) { \\
     unsigned b_id = name_id[#Base], \\
         d_id = name_id[#Derived]; \\
     /* remembers the instantiated cast */ \\
-    (*cast_map)[b_id][d_id] = cast_helper<Base,Derived>; \\
+    (*cast_map)[b_id][d_id] = cast_helper<Base,Derived,SubBase>; \\
 }
-#include "classpairs.inc"
+#include "new_classpairs.inc"
 #undef BASE2DERIVED
 }
 """
