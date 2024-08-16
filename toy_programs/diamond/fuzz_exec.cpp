@@ -39,10 +39,10 @@ public:
 
 
 
-template <class B, class D> void __attribute__((visibility ("default"))) cast_helper(void** in, void** out) {
+template <class B, class D, class SubB> void __attribute__((visibility ("default"))) cast_helper(void** in, void** out) {
     D* d = reinterpret_cast<D*>(in[0]);
-    // B* b = dynamic_cast<B*>(d);
-    B* b = (B*)d;
+    SubB* i = (SubB*)d;
+    B* b = (B*)i;
     out[0] = reinterpret_cast<void *>(b);
 }
 
@@ -56,13 +56,13 @@ std::unordered_map<std::string, unsigned int> name_id;
 for (size_t i=0; i<sch["types"].size(); ++i) {
     name_id[sch["types"][i]["name"]] = ((sch["types"])[i])["id"];
 }
-#define BASE2DERIVED(Base, Derived) { \
+#define BASE2DERIVED(Base, Derived,SubBase) { \
     unsigned b_id = name_id[#Base], \
         d_id = name_id[#Derived]; \
     /* remembers the instantiated cast */ \
-    (*cast_map)[b_id][d_id] = cast_helper<Base,Derived>; \
+    (*cast_map)[b_id][d_id] = cast_helper<Base,Derived,SubBase>; \
 }
-#include "classpairs.inc"
+#include "new_classpairs.inc"
 #undef BASE2DERIVED
 }
 

@@ -7,7 +7,6 @@
 
 Do the following as the first steps because the "risky.json" produced here is needed to generate the "schema.yaml"
 ```
-cp my_graphfuzz/core/json.hpp <dir_storing_parser.cpp>
 make
 make run
 cp risky.json <wherever_schema_infer_is_to_be_executed>
@@ -44,3 +43,8 @@ run:
   - so it becomes an ~unknown datatype 
   - Either dont mutate them or write your own custom mutator for each of these datatypes
 - need to remove all .json .yaml files before re-generating them in event library src code changes
+
+Last minute code change for ambiguous conversion for non-virtual inheritance with common base classes
+- Included another template parameter “SubB” to cast_helper(), which will contain:
+  - The Base class (A) when there is no ambiguous conversion
+  - Any direct derived class of the Base class (B or C) when there is ambiguous conversion

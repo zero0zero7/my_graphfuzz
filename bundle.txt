@@ -1,0 +1,12 @@
+BUNDLE:
+1. Manually add a bundle<A,B> object type into schema.yaml
+
+2. Manually edit endpoint driver of APIs whose outputs include A and B object types in schema.yaml, 
+    Eg. A::API_1 outputs A (receiver obj) and B (via return). Change the output to [‘bundle<A,B>’]. Manually define exec as B *b = $i0->API_1(); $o0=BUNDLE($i0,b)
+    a. Does not apply to APIs that only output B without A, given the B object here would be free to use since there is no object A dependent on it.
+    b. Impact: APIs that do consume B will not get fuzzed since mismatch with the bundle, regardless of how B is used in the API ie. whether it gets deleted.
+
+3. schema.json , fuzz_exec.cpp , fuzz_write.cpp 
+    a. Will have manually defined API_1 that outputs bundle. Wont have another version that outputs B, unless that corresponding endpoint driver was kept in schema.yaml
+    b. Other APIs, excluding default constructors and destructors, that receive / output active part of bundle [ie. obj type A] will have original version of the shim, as well as, an auto-generated bundled version shim which now references the active part and receives / outputs the bundle 
+        Ref: rdkit/in/Fuzz/fuzz_exec.cpp:shim140 vs shim156

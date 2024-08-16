@@ -1,1 +1,1 @@
-/usr/local/lib/libclassfuzz.a
+/usr/local/lib/libgraphfuzz.a

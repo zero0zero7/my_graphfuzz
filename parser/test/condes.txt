@@ -1,0 +1,21 @@
+IS_CONSTRUCTOR
+1, 0, 0, 0, 0, 0, 0, 0, NEXT
+1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 
+IS_DESTRUCTOR
+0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+
+CONSUMERS
+Type id: 2
+(auto) B::void fr(); 0  ,  (auto) B::char * get_buffer(); 0  ,  (auto) B::void mall_free(int n); 0  ,  (auto) B::void mset(char chr, int n); 0  ,  (auto) B::void set_buffer(int idx, char chr); 0  ,  (auto) B::char A::ret_a(); 0  ,  (auto) B::~B(); 0  ,  (auto) C::void fr(); 0  ,  (auto) C::char * get_buffer(); 0  ,  (auto) C::float get_c(); 0  ,  (auto) C::void mall_free(int n); 0  ,  (auto) C::void mset(char chr, int n); 0  ,  (auto) C::void set_buffer(int idx, char chr); 0  ,  (auto) C::char A::ret_a(); 0  ,  (auto) C::~C(); 0  ,  
+Type id: 1
+(auto) A::void fr(); 0  ,  (auto) A::char * get_buffer(); 0  ,  (auto) A::void mall_free(int n); 0  ,  (auto) A::void mset(char chr, int n); 0  ,  (auto) A::void set_buffer(int idx, char chr); 0  ,  (auto) A::char A::ret_a(); 0  ,  (auto) A::~A(); 0  ,  (auto) B::void fr(); 0  ,  (auto) B::char * get_buffer(); 0  ,  (auto) B::void mall_free(int n); 0  ,  (auto) B::void mset(char chr, int n); 0  ,  (auto) B::void set_buffer(int idx, char chr); 0  ,  (auto) B::char A::ret_a(); 0  ,  (auto) B::~B(); 0  ,  
+Type id: 0
+(auto) A::void fr(); 0  ,  (auto) A::char * get_buffer(); 0  ,  (auto) A::void mall_free(int n); 0  ,  (auto) A::void mset(char chr, int n); 0  ,  (auto) A::void set_buffer(int idx, char chr); 0  ,  (auto) A::char A::ret_a(); 0  ,  (auto) A::~A(); 0  ,  
+
+PRODUCERS
+Type id: 2
+(auto) C::C(); 0  ,  (auto) C::void fr(); 0  ,  (auto) C::char * get_buffer(); 0  ,  (auto) C::float get_c(); 0  ,  (auto) C::void mall_free(int n); 0  ,  (auto) C::void mset(char chr, int n); 0  ,  (auto) C::void set_buffer(int idx, char chr); 0  ,  (auto) C::char A::ret_a(); 0  ,  
+Type id: 1
+(auto) B::B(); 0  ,  (auto) B::void fr(); 0  ,  (auto) B::char * get_buffer(); 0  ,  (auto) B::void mall_free(int n); 0  ,  (auto) B::void mset(char chr, int n); 0  ,  (auto) B::void set_buffer(int idx, char chr); 0  ,  (auto) B::char A::ret_a(); 0  ,  (auto) C::C(); 0  ,  (auto) C::void fr(); 0  ,  (auto) C::char * get_buffer(); 0  ,  (auto) C::float get_c(); 0  ,  (auto) C::void mall_free(int n); 0  ,  (auto) C::void mset(char chr, int n); 0  ,  (auto) C::void set_buffer(int idx, char chr); 0  ,  (auto) C::char A::ret_a(); 0  ,  
+Type id: 0
+(auto) A::A(); 0  ,  (auto) A::void fr(); 0  ,  (auto) A::char * get_buffer(); 0  ,  (auto) A::void mall_free(int n); 0  ,  (auto) A::void mset(char chr, int n); 0  ,  (auto) A::void set_buffer(int idx, char chr); 0  ,  (auto) A::char A::ret_a(); 0  ,  (auto) B::B(); 0  ,  (auto) B::void fr(); 0  ,  (auto) B::char * get_buffer(); 0  ,  (auto) B::void mall_free(int n); 0  ,  (auto) B::void mset(char chr, int n); 0  ,  (auto) B::void set_buffer(int idx, char chr); 0  ,  (auto) B::char A::ret_a(); 0  ,  

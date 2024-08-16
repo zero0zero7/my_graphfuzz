@@ -162,24 +162,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named classfuzz
+# Target rules for targets named graphfuzz
 
 # Build rule for target.
-classfuzz: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 classfuzz
-.PHONY : classfuzz
+graphfuzz: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 graphfuzz
+.PHONY : graphfuzz
 
 # fast build rule for target.
-classfuzz/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/classfuzz.dir/build.make CMakeFiles/classfuzz.dir/build
-.PHONY : classfuzz/fast
+graphfuzz/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphfuzz.dir/build.make CMakeFiles/graphfuzz.dir/build
+.PHONY : graphfuzz/fast
 
 core/harness.o: core/harness.cpp.o
 .PHONY : core/harness.o
 
 # target to build an object file
 core/harness.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/classfuzz.dir/build.make CMakeFiles/classfuzz.dir/core/harness.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphfuzz.dir/build.make CMakeFiles/graphfuzz.dir/core/harness.cpp.o
 .PHONY : core/harness.cpp.o
 
 core/harness.i: core/harness.cpp.i
@@ -187,7 +187,7 @@ core/harness.i: core/harness.cpp.i
 
 # target to preprocess a source file
 core/harness.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/classfuzz.dir/build.make CMakeFiles/classfuzz.dir/core/harness.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphfuzz.dir/build.make CMakeFiles/graphfuzz.dir/core/harness.cpp.i
 .PHONY : core/harness.cpp.i
 
 core/harness.s: core/harness.cpp.s
@@ -195,7 +195,7 @@ core/harness.s: core/harness.cpp.s
 
 # target to generate assembly for a file
 core/harness.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/classfuzz.dir/build.make CMakeFiles/classfuzz.dir/core/harness.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphfuzz.dir/build.make CMakeFiles/graphfuzz.dir/core/harness.cpp.s
 .PHONY : core/harness.cpp.s
 
 graph.pb.o: graph.pb.cc.o
@@ -203,7 +203,7 @@ graph.pb.o: graph.pb.cc.o
 
 # target to build an object file
 graph.pb.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/classfuzz.dir/build.make CMakeFiles/classfuzz.dir/graph.pb.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphfuzz.dir/build.make CMakeFiles/graphfuzz.dir/graph.pb.cc.o
 .PHONY : graph.pb.cc.o
 
 graph.pb.i: graph.pb.cc.i
@@ -211,7 +211,7 @@ graph.pb.i: graph.pb.cc.i
 
 # target to preprocess a source file
 graph.pb.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/classfuzz.dir/build.make CMakeFiles/classfuzz.dir/graph.pb.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphfuzz.dir/build.make CMakeFiles/graphfuzz.dir/graph.pb.cc.i
 .PHONY : graph.pb.cc.i
 
 graph.pb.s: graph.pb.cc.s
@@ -219,7 +219,7 @@ graph.pb.s: graph.pb.cc.s
 
 # target to generate assembly for a file
 graph.pb.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/classfuzz.dir/build.make CMakeFiles/classfuzz.dir/graph.pb.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphfuzz.dir/build.make CMakeFiles/graphfuzz.dir/graph.pb.cc.s
 .PHONY : graph.pb.cc.s
 
 # Help Target
@@ -234,7 +234,7 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... classfuzz"
+	@echo "... graphfuzz"
 	@echo "... core/harness.o"
 	@echo "... core/harness.i"
 	@echo "... core/harness.s"

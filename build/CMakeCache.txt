@@ -145,7 +145,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=classFuzz
+CMAKE_PROJECT_NAME:STATIC=graphfuzz
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION:STATIC=1.0
@@ -256,6 +256,15 @@ classFuzz_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 classFuzz_SOURCE_DIR:STATIC=/home/xy/my_graphfuzz
+
+//Value Computed by CMake
+graphfuzz_BINARY_DIR:STATIC=/home/xy/my_graphfuzz/build
+
+//Value Computed by CMake
+graphfuzz_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+graphfuzz_SOURCE_DIR:STATIC=/home/xy/my_graphfuzz
 
 
 ########################

@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /home/xy/my_graphfuzz/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/classfuzz.dir/all
+all: CMakeFiles/graphfuzz.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/classfuzz.dir/clean
+clean: CMakeFiles/graphfuzz.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/classfuzz.dir
+# Target rules for target CMakeFiles/graphfuzz.dir
 
 # All Build rule for target.
-CMakeFiles/classfuzz.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/classfuzz.dir/build.make CMakeFiles/classfuzz.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/classfuzz.dir/build.make CMakeFiles/classfuzz.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xy/my_graphfuzz/build/CMakeFiles --progress-num=1,2,3,4 "Built target classfuzz"
-.PHONY : CMakeFiles/classfuzz.dir/all
+CMakeFiles/graphfuzz.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphfuzz.dir/build.make CMakeFiles/graphfuzz.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphfuzz.dir/build.make CMakeFiles/graphfuzz.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xy/my_graphfuzz/build/CMakeFiles --progress-num=1,2,3,4 "Built target graphfuzz"
+.PHONY : CMakeFiles/graphfuzz.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/classfuzz.dir/rule: cmake_check_build_system
+CMakeFiles/graphfuzz.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/xy/my_graphfuzz/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/classfuzz.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/graphfuzz.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/xy/my_graphfuzz/build/CMakeFiles 0
-.PHONY : CMakeFiles/classfuzz.dir/rule
+.PHONY : CMakeFiles/graphfuzz.dir/rule
 
 # Convenience name for target.
-classfuzz: CMakeFiles/classfuzz.dir/rule
-.PHONY : classfuzz
+graphfuzz: CMakeFiles/graphfuzz.dir/rule
+.PHONY : graphfuzz
 
 # clean rule for target.
-CMakeFiles/classfuzz.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/classfuzz.dir/build.make CMakeFiles/classfuzz.dir/clean
-.PHONY : CMakeFiles/classfuzz.dir/clean
+CMakeFiles/graphfuzz.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphfuzz.dir/build.make CMakeFiles/graphfuzz.dir/clean
+.PHONY : CMakeFiles/graphfuzz.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
